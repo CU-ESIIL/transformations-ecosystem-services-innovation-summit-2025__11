@@ -1,9 +1,14 @@
 cff-version: 1.2.0
 message: "If you use this repository, please cite it as below."
-title: "Project Group OASIS"
-version: "1.0.0"
-doi: 10.5281/zenodo.11166898
-date-released: 2025-09-10
+title: "Transformations & Ecosystem Services Innovation Summit 2025 — Team 11"
+abstract: >-
+  Collaborative project hub for the Transformations & Ecosystem Services Innovation Summit
+  2025 (Team 11). The repository stores documentation, analysis code, and communication
+  assets that summarize our rapid prototyping work.
+version: "0.1.0"
+date-released: 2025-01-01
 authors:
-  - family-names: Tuff
-    given-names: Ty
+  - family-names: ESIIL
+    given-names: Team 11
+repository-code: "https://github.com/CU-ESIIL/transformations-ecosystem-services-innovation-summit-2025__11"
+url: "https://cu-esiil.github.io/transformations-ecosystem-services-innovation-summit-2025__11/"

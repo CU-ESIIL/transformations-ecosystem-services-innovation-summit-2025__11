@@ -8,53 +8,53 @@ HERO (Swap hero.jpg, title, strapline, and the three links)
 
 # Our product 📣
 
-Static markdown document of case study + model RAD integration (hosted on OASIS)
+- Static markdown document of case study + model RAD integration (hosted on OASIS)
 
-Code repository for markdown document
+- Code repository for markdown document
 
-Explanation of case study
+- Explanation of case study
 
-Explanation of model
+- Explanation of model
 
-Integration of RAD framework
+- Integration of RAD framework
 
-Modeling outcomes
+- Modeling outcomes
 
 We will conduct a case study on a specific ecosystem to explore how implementation of the RAD management framework affects different ecosystem services (and thus different stakeholders) in various ways. We will use the information gathered through this case study as an input into a model to predict how prioritization of certain ecosystem services may demand different approaches within the RAD framework. Our product will be a static markdown document that describes our case study and the findings of that exploration as well as the development and outcomes of the model. We will include a code repository with the document.
 
 # Our question(s) 📣
 
-How and when to decide what the appropriate system is for modeling the RAD approach? (model/case)
+1. How and when to decide what the appropriate system is for modeling the RAD approach? (model/case)
 
-What types of systems is this being used in?
+a. What types of systems is this being used in?
 
-Can we identify management "categories" within each component of RAD?
+b. Can we identify management "categories" within each component of RAD?
 
-How might decision making change within the RAD framework based on the ecosystem service being provided? (case)
+2. How might decision making change within the RAD framework based on the ecosystem service being provided? (case)
 
-Specific to the case study we choose
+a. Specific to the case study we choose
 
-How balanced are the different sectors of the RAD approach? E.g. is the "Direct" approach not frequently used. (case)
+3. How balanced are the different sectors of the RAD approach? E.g. is the "Direct" approach not frequently used. (case)
 
-Should a manager start with RAD, or end with RAD?
+a. Should a manager start with RAD, or end with RAD?
 
-How does RAD incorporate qualitative data / perspectives / lived experiences of stakeholders in the system? (case)
+4. How does RAD incorporate qualitative data / perspectives / lived experiences of stakeholders in the system? (case)
 
-How can the experience of modeling improve the application of RAD? (model)
+5. How can the experience of modeling improve the application of RAD? (model)
 
 # Hypotheses / intentions
 
-A well documented system with a robust body of research will be the most effective for documenting the RAD approach.
+1. Identify a well documented system with a robust body of research in order to explore modeling the RAD approach.
 
-Note: more information can potentially make it more difficult to understand the mechanisms underlying the model
+2. Model a real world system using JOSH, incporporating the RAD framework. 
 
 ## List of parameters
 
-Well documented species interactions
+- Well documented species interactions
 
 …
 
-Provide an example of using RAD effectively.
+- Provide an example of using RAD effectively.
 
 (Intention and hypothesis) Better management decisions are made when starting from RAD. 😬
 

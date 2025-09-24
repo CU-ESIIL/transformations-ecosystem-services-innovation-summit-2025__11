@@ -8,7 +8,7 @@ HERO (Swap hero.jpg, title, strapline, and the three links)
 
 ![Early pattern we’re seeing](assets/blm_Sagebrush.png)
 [RAD for cheatgrass: blm_Sagebrush.png](https://github.com/CU-ESIIL/transformations-ecosystem-services-innovation-summit-2025__11/blob/main/docs/assets/blm_Sagebrush.jpg)
-*blm_Sagebrush.png* Artemisia tridentata
+*Figure 1* Artemisia tridentata
 
 # Our product 📣
 

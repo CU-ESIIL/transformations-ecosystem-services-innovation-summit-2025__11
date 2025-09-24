@@ -51,29 +51,53 @@ In a changing world many environmental transformations will be inevitable or ver
 ---
 
 ## Day 2 — Data & Methods
-*Focus: what we’re testing and building; show a first visual (plot/map/screenshot/GIF).*
+*The sagebrush biome is MASSIVE.*
+![Massive Sage Biome and Annual invasive grasses](assets/sagebrush_extent.png)
+*The sagebrush biome is outlined in blue here. Annual grass cover % is shown here, from low (green) to high (red). Image credit: [Rangeland Analysis Platform (RAP) Partner Tool: Cheatgrass](https://conservation-maps.wlfw.org/?sg_biome_v=true&ll=42.4017,-125.4102&z=5&basemap=hybrid&sg_biome_o=0.99&scd_o=1&tab=0&gp_biome_ext_v=true&ann_hc_v=true)*
 
-Insert data screenshots.
 
 ### Data sources we’re exploring 📣
 <!-- EDIT: Link each source; add size/notes if relevant. -->
-- **Source A**
+**Source: RCMAP**
+- Cover data
+  - Perennial grasses
+  - Annual grasses
+  - Sagebrush
 
-  ![Pattern revealed during exploration](assets/explore_data_plot.png)
-[Raw photo location: explore_data_plot.png](https://github.com/CU-ESIIL/Project_group_OASIS/blob/main/docs/assets/explore_data_plot.png)
-  *Snapshot showing initial data patterns.*
+**Source: Climate Data**
+- Annual precipitation
+- Annual mean temperature
+- (Insert some information here about the projections we're using)
 
-- Source B — link and 1-line description
+**Source: Stakeholders**
+- Utah State
+- Bureau of Land Management (BLM)
+
+**Source: Management Treatments**
+- TWIG data
+  - Mechanical removal of grasses and sagebrush
+  - Seeding in native species
+  - Herbicide 
 
 ### Methods / technologies we’re testing 📣
-- Approach 1 (e.g., time-series break detection)
-- Approach 2 (e.g., random forest on features)
-- Visualization (e.g., map tiles, small multiples)
+**(1) Choose a study region**
+- How we did this
+- Insert core area map
+
+**(2) Characterize the study region**
+- Vegetation community
+- Climate
+- Managament
+- Stakeholders  
+
+**(3) Model RAD management scenarios across the study region**
+- **Resist** strategies:
+- **Accept** strategies:
+- **Direct** strategies:
 
 ### Challenges identified
-- Data gaps / quality issues
-- Method limitations / compute constraints
-- Open questions we need to decide on
+- We are characterizing a very complex system in < 12 hours.
+- etc.
 
 ### Visuals
 <!-- EDIT: Swap examples; keep file sizes modest. -->
@@ -81,14 +105,10 @@ Insert data screenshots.
 
 
 #### Static figure
-![Early pattern we’re seeing](assets/figure1.png)
-[RAD for cheatgrass: figure1.png](https://github.com/CU-ESIIL/transformations-ecosystem-services-innovation-summit-2025__11/blob/main/RAD_sagebrush.png)
-*Figure 1.* One line on what this suggests.
+
 
 #### Animated change (GIF)
-![Seasonal/temporal change animation](assets/change.gif)
-[Raw photo location: change.gif](https://github.com/CU-ESIIL/Project_group_OASIS/blob/main/docs/assets/change.gif)
-*Figure 2.* One line on what changes across time.
+
 
 #### Interactive map (iframe)
 <iframe
@@ -105,7 +125,6 @@ Insert data screenshots.
 *Focus: synthesis; highlight 2–3 visuals that tell the story; keep text crisp. Practice a 2-minute walkthrough of the homepage 📣: Why → Questions → Data/Methods → Findings → Next.*
 
 ![Team photo at start of Day 3](assets/team_photo.jpg)
-[Raw photo location: team_photo.jpg](https://github.com/CU-ESIIL/Project_group_OASIS/blob/main/docs/assets/team_photo.jpg)
 
 ### Findings at a glance 📣
 <!-- EDIT: 2–4 bullets, each a headline in plain language with a number if possible. -->
@@ -202,4 +221,5 @@ License: CC-BY-4.0 unless noted. See dataset licenses on the **[Data](data.md)**
 - Use short, active sentences; this is a scrolling “slide deck.”
 - Update this page at least once per day during the sprint.
 -->
+
 

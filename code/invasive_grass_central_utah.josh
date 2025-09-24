@@ -48,9 +48,9 @@ start patch Default
 
   # Initialize with Central Utah appropriate starting conditions
   # Read initial occupancy from external data in first year only
-  invasiveCover.init = external invasiveInitial if year == startYear else prior.invasiveCover
-  nativeCover.init = external nativeInitial if year == startYear else prior.nativeCover
-  shrubCover.init = external shrubInitial if year == startYear else prior.shrubCover
+  invasiveCover.start = external invasiveInitial if year == startYear else prior.invasiveCover
+  nativeCover.start = external nativeInitial if year == startYear else prior.nativeCover
+  shrubCover.start = external shrubInitial if year == startYear else prior.shrubCover
   
   # Management application tracking
   mechanicalTreatment.init = false

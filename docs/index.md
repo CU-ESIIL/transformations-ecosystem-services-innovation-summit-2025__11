@@ -7,7 +7,7 @@ HERO (Swap hero.jpg, title, strapline, and the three links)
 ========================================================= -->
 
 
-![Sagebrush!]( https://github.com/CU-ESIIL/transformations-ecosystem-services-innovation-summit-2025__11/blob/main/docs/assets/blm_Sagebrush.jpg "Sagebrush")
+![Sagebrush!](assets/blm_Sagebrush.jpg "Sagebrush")
 
 # Our product 📣
 

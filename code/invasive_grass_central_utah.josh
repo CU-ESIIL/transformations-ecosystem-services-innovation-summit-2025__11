@@ -20,7 +20,7 @@ start simulation Main
   fire.base.probability = 1.8%
   fire.temperature.threshold = 22 degrees
   fire.temperature.modifier = 0.15%
-  fire.precipitation.threshold = 300 mm
+  fire.precipitation.threshold = 100 mm
   fire.precipitation.modifier = 0.8%
   fire.invasive.coverage.modifier = 0.25%
 
@@ -83,23 +83,23 @@ start patch Default
   
   onFire.step = (sample uniform from 0% to 100%) < fireProbability
 
-  # Calculate species growth rates based on precipitation
-  invasiveGrowth.step = map external precipitation from [180 mm, 500 mm] to [5%, 25%] sigmoid
-  nativeGrowth.step = map external precipitation from [200 mm, 450 mm] to [3%, 15%] sigmoid  
-  shrubGrowth.step = map external precipitation from [250 mm, 400 mm] to [1%, 8%] sigmoid
+  # Calculate species growth rates based on summer precipitation
+  invasiveGrowth.step = map external precipitation from [50 mm, 150 mm] to [5%, 25%] sigmoid
+  nativeGrowth.step = map external precipitation from [60 mm, 120 mm] to [3%, 15%] sigmoid
+  shrubGrowth.step = map external precipitation from [70 mm, 110 mm] to [1%, 8%] sigmoid
 
   # Calculate spread rates (colonization of empty space)
   emptySpace.step = limit (100% - prior.invasiveCover - prior.nativeCover - prior.shrubCover) to [0%, 100%]
   
   invasiveSpread.step = {
     const maxSpread = emptySpace * 32% / 100%
-    const precipModifier = map external precipitation from [150 mm, 400 mm] to [0.3, 1.0] linear
+    const precipModifier = map external precipitation from [40 mm, 120 mm] to [0.3, 1.0] linear
     return maxSpread * precipModifier
   }
   
   nativeSpread.step = {
     const maxSpread = emptySpace * 9% / 100%
-    const precipModifier = map external precipitation from [200 mm, 350 mm] to [0.2, 1.0] linear
+    const precipModifier = map external precipitation from [50 mm, 100 mm] to [0.2, 1.0] linear
     const reseedingBonus = meta.reseeding.success.rate if prior.reseedingTreatment else 0%
     const droughtBonus = meta.drought.resistant.establishment.multiplier if prior.droughtResistantTreatment else 1 count
     return maxSpread * precipModifier * droughtBonus + (emptySpace * reseedingBonus / 100%)
@@ -107,7 +107,7 @@ start patch Default
   
   shrubSpread.step = {
     const maxSpread = emptySpace * 5% / 100%  
-    const precipModifier = map external precipitation from [250 mm, 400 mm] to [0.1, 0.8] linear
+    const precipModifier = map external precipitation from [60 mm, 110 mm] to [0.1, 0.8] linear
     return maxSpread * precipModifier
   }
 

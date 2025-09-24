@@ -10,10 +10,10 @@
 # Management intensity (0-100% of landscape treated annually)
 # These are the main "policy levers" students should experiment with
 
-management.mechanical.coverage = 8 %          # Percent treated with mechanical thinning/mowing
-management.reseeding.coverage = 6 %           # Percent reseeded with native species  
-management.drought.resistant.coverage = 3 %  # Percent planted with drought-resistant varieties
-management.herbicide.coverage = 5 %          # Percent treated with selective herbicide
+mechanical.coverage = 8 %          # Percent treated with mechanical thinning/mowing
+reseeding.coverage = 6 %           # Percent reseeded with native species
+drought.resistant.coverage = 3 %  # Percent planted with drought-resistant varieties
+herbicide.coverage = 5 %          # Percent treated with selective herbicide
 
 # =============================================================================
 # ADVANCED ECOLOGICAL PARAMETERS (Optional - for deeper exploration)
@@ -49,7 +49,7 @@ shrub.water.depth = 3.0 meters            # Deepest water access (sagebrush)
 # =============================================================================
 
 # Primary Focus for Students:
-# - Experiment with management.*.coverage parameters to explore policy trade-offs
+# - Experiment with *.coverage parameters to explore policy trade-offs
 # - Questions to explore: "What if we double treatment area?" 
 # - "Is intensive treatment of small areas better than light treatment of large areas?"
 # - Compare carbon storage vs. native habitat scores under different strategies

@@ -35,12 +35,12 @@ start simulation Main
   fire.damage.shrub = 85%
 
   # Management effectiveness parameters
-  management.mechanical.invasive.reduction = 50%
-  management.reseeding.success.rate = 25%
-  management.drought.resistant.fire.reduction = 30%
-  management.drought.resistant.establishment.multiplier = 2.5 count
-  management.herbicide.reduction = 40%
-  management.herbicide.duration = 2 count
+  mechanical.invasive.reduction = 50%
+  reseeding.success.rate = 25%
+  drought.resistant.fire.reduction = 30%
+  drought.resistant.establishment.multiplier = 2.5 count
+  herbicide.reduction = 40%
+  herbicide.duration = 2 count
 
 end simulation
 
@@ -73,7 +73,7 @@ start patch Default
   
   coverageRisk.step = (prior.invasiveCover / 10%) * meta.fire.invasive.coverage.modifier
   
-  managementReduction.step = meta.management.drought.resistant.fire.reduction if prior.droughtResistantTreatment else 0%
+  managementReduction.step = meta.drought.resistant.fire.reduction if prior.droughtResistantTreatment else 0%
   
   fireProbability.step = {
     const baseRisk = meta.fire.base.probability + temperatureRisk + precipitationRisk + coverageRisk
@@ -100,8 +100,8 @@ start patch Default
   nativeSpread.step = {
     const maxSpread = emptySpace * 9% / 100%
     const precipModifier = map external precipitation from [200 mm, 350 mm] to [0.2, 1.0] linear
-    const reseedingBonus = meta.management.reseeding.success.rate if prior.reseedingTreatment else 0%
-    const droughtBonus = meta.management.drought.resistant.establishment.multiplier if prior.droughtResistantTreatment else 1 count
+    const reseedingBonus = meta.reseeding.success.rate if prior.reseedingTreatment else 0%
+    const droughtBonus = meta.drought.resistant.establishment.multiplier if prior.droughtResistantTreatment else 1 count
     return maxSpread * precipModifier * droughtBonus + (emptySpace * reseedingBonus / 100%)
   }
   
@@ -112,16 +112,16 @@ start patch Default
   }
 
   # Apply management treatments (simplified annual application)
-  mechanicalTreatment.step = (sample uniform from 0% to 100%) < config management.mechanical.coverage
-  reseedingTreatment.step = (sample uniform from 0% to 100%) < config management.reseeding.coverage  
-  droughtResistantTreatment.step = (sample uniform from 0% to 100%) < config management.drought.resistant.coverage
-  herbicideTreatment.step = (sample uniform from 0% to 100%) < config management.herbicide.coverage
+  mechanicalTreatment.step = (sample uniform from 0% to 100%) < config mechanical.coverage
+  reseedingTreatment.step = (sample uniform from 0% to 100%) < config reseeding.coverage
+  droughtResistantTreatment.step = (sample uniform from 0% to 100%) < config drought.resistant.coverage
+  herbicideTreatment.step = (sample uniform from 0% to 100%) < config herbicide.coverage
   
   # Update herbicide duration tracking
   herbicideYearsRemaining.step = {
-    if herbicideTreatment {
-      return meta.management.herbicide.duration
-    } elif prior.herbicideYearsRemaining > 0 count {
+    if (herbicideTreatment) {
+      return meta.herbicide.duration
+    } elif (prior.herbicideYearsRemaining > 0 count) {
       return prior.herbicideYearsRemaining - 1 count
     } else {
       return 0 count
@@ -134,8 +134,8 @@ start patch Default
   shrubDestruction.step = sample normal with mean of meta.fire.damage.shrub std of 20%
 
   # Apply management effects on invasive grass
-  mechanicalReduction.step = meta.management.mechanical.invasive.reduction if mechanicalTreatment else 0%
-  herbicideReduction.step = meta.management.herbicide.reduction if herbicideYearsRemaining > 0 count else 0%
+  mechanicalReduction.step = meta.mechanical.invasive.reduction if mechanicalTreatment else 0%
+  herbicideReduction.step = meta.herbicide.reduction if herbicideYearsRemaining > 0 count else 0%
   
   totalInvasiveReduction.step = limit (mechanicalReduction + herbicideReduction) to [0%, 95%]
 
@@ -164,23 +164,23 @@ start patch Default
   
   # Normalize if total exceeds 100% (competition for space)
   invasiveCover.end = {
-    if totalCover > 100% {
+    if (totalCover > 100%) {
       return invasiveCover * 100% / totalCover
     } else {
       return invasiveCover
     }
   }
-  
+
   nativeCover.end = {
-    if totalCover > 100% {
-      return nativeCover * 100% / totalCover  
+    if (totalCover > 100%) {
+      return nativeCover * 100% / totalCover
     } else {
       return nativeCover
     }
   }
-  
+
   shrubCover.end = {
-    if totalCover > 100% {
+    if (totalCover > 100%) {
       return shrubCover * 100% / totalCover
     } else {
       return shrubCover

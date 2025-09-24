@@ -6,7 +6,9 @@
 HERO (Swap hero.jpg, title, strapline, and the three links)
 ========================================================= -->
 
-Insert Sagebrush Image
+![Early pattern we’re seeing](assets/blm_Sagebrush)
+[RAD for cheatgrass: figure1.png](https://github.com/CU-ESIIL/transformations-ecosystem-services-innovation-summit-2025__11/blob/main/docs/assets/blm_Sagebrush.jpg)
+*Figure 1.* One line on what this suggests.
 
 # Our product 📣
 

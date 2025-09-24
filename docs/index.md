@@ -6,6 +6,8 @@
 HERO (Swap hero.jpg, title, strapline, and the three links)
 ========================================================= -->
 
+Insert Sagebrush Image
+
 # Our product 📣
 
 - Static markdown document of case study + model RAD integration (hosted on OASIS)
@@ -22,24 +24,13 @@ HERO (Swap hero.jpg, title, strapline, and the three links)
 
 We will conduct a case study on a specific ecosystem to explore how implementation of the RAD management framework affects different ecosystem services (and thus different stakeholders) in various ways. We will use the information gathered through this case study as an input into a model to predict how prioritization of certain ecosystem services may demand different approaches within the RAD framework. Our product will be a static markdown document that describes our case study and the findings of that exploration as well as the development and outcomes of the model. We will include a code repository with the document.
 
-# Our question(s) 📣
+# Our question 📣
 
-1. How and when to decide what the appropriate system is for modeling the RAD approach? (model/case)
-a. What types of systems is this being used in?
-b. Can we identify management “categories” within each component of RAD?
-2. How might decision making change within the RAD framework based on the ecosystem service being provided? (case)
-a. Specific to the case study we choose
-3. How balanced are the different sectors of the RAD approach? E.g. is the “Direct” approach not frequently used. (case)
-a. Should a manager start with RAD, or end with RAD?
-4. How does RAD incorporate qualitative data / perspectives / lived experiences of stakeholders in the system? (case)
-5. How can the experience of modeling improve the application of RAD? (model)
-
+What are the predicted ecological outcomes post-disturbance when adopting RAD management actions in sagebrush ecosystes?
 
 # Hypotheses / intentions
 
-1. Identify a well documented system with a robust body of research in order to explore modeling the RAD approach.
-
-2. Model a real world system using JOSH, incporporating the RAD framework. 
+Insert hypothese here. 
 
 ## List of parameters
 
@@ -59,6 +50,8 @@ There is currently little understanding of how to effectively implement the RAD 
 
 ## Day 2 — Data & Methods
 *Focus: what we’re testing and building; show a first visual (plot/map/screenshot/GIF).*
+
+Insert data screenshots.
 
 ### Data sources we’re exploring 📣
 <!-- EDIT: Link each source; add size/notes if relevant. -->
@@ -162,10 +155,18 @@ There is currently little understanding of how to effectively implement the RAD 
 ---
 
 ## Team
-| Name | Role | Contact | GitHub |
-|------|------|---------|--------|
-| Jane Doe | Lead | jane.doe@example.org | @janedoe |
-| John Smith | Analyst | john.smith@example.org | @jsmith |
+| Name | Sub Group | 
+|------|------|
+| Julie | Modeling |
+| Nevyn | Modeling |
+| Sam T | Case |
+| Nayani | Case |
+| Courtney | Case |
+| Maria | Case |
+| Nick | Modeling |
+| Sam | Modeling |
+| Helen | Case |
+| Kusum | Modeling |
 
 ---
 

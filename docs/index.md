@@ -33,21 +33,22 @@ What are the predicted ecological outcomes post-disturbance when adopting RAD ma
 
 # Hypotheses / intentions
 
-Insert hypothese here. 
+H1: Biomass will not be negatively affected (i.e. decrease) independent of the implemented RAD action.
+
+H2: Biomass of specific plant species will change depending on the RAD action. Specifically: the highest biomass of sagebrush, native grass and cheatgrass will occur in the R, D and A treatments, respectively. 
 
 ## List of parameters
 
-- Well documented species interactions
-
-…
-
-- Provide an example of using RAD effectively.
+Brainstorming treatments:
+R: herbicide/removal of invasive + reseeding sagebrush
+A: do nothing
+D: mechanical removal of sagebrush or 
 
 (Intention and hypothesis) Better management decisions are made when starting from RAD. 😬
 
 # Why this matters (the "upshot") 📣
 
-There is currently little understanding of how to effectively implement the RAD framework within actionable management. We are trying to understand the contexts in which the RAD framework may be more appropriate and provide resources on how to effectively implement that decision-making approach, specifically keeping in mind the potentially differing priorities of different stakeholders. We also aim to explore the utility and limitations of the RAD framework.
+In a changing world many environmental transformations will be inevitable or very challenging to avoid, so management approaches should embrace alternative actions other than resisting.  In other words, adopting a RAD framework can enable more flexibility regarding future environmental outcomes in a changing world. Based on this, we will focus on the sagebrush ecosystem with the aim of comparing how plant biomass may change in future warmer climate scenarios when implementing different actions under the RAD framework. The current state of this ecosystem is a dominant sagebrush cover, but because alternative states are possible following disturbance (e.g. conversion to cheatgrass or native grass dominated ecosystems), we are focusing on overall biomass as it represents an important ecosystem service despite change.
 
 ---
 

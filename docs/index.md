@@ -6,11 +6,8 @@
 HERO (Swap hero.jpg, title, strapline, and the three links)
 ========================================================= -->
 
-![Sagebrush](assets/blm_Sagebrush.jpg)
-[Raw photo location: blm_Sagebrush.jpg](https://github.com/CU-ESIIL/transformations-ecosystem-services-innovation-summit-2025__11/blob/main/docs/assets/blm_Sagebrush.jpg)
-*Figure 1* Artemisia tridentata
 
-![The San Juan Mountains are beautiful!]( https://github.com/CU-ESIIL/transformations-ecosystem-services-innovation-summit-2025__11/blob/main/docs/assets/blm_Sagebrush.jpg "San Juan Mountains")
+![Sagebrush!]( https://github.com/CU-ESIIL/transformations-ecosystem-services-innovation-summit-2025__11/blob/main/docs/assets/blm_Sagebrush.jpg "Sagebrush")
 
 # Our product 📣
 

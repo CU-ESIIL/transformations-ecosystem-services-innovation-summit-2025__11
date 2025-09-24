@@ -27,7 +27,7 @@ We will conduct a case study on a specific ecosystem to explore how implementati
 
 # Our question 📣
 
-What are the predicted ecological outcomes post-disturbance when adopting RAD management actions in sagebrush ecosystes?
+What are the predicted ecological outcomes post-disturbance when adopting RAD management actions in sagebrush ecosystems?
 
 # Hypotheses / intentions
 
@@ -38,9 +38,9 @@ H2: Biomass of specific plant species will change depending on the RAD action. S
 ## List of parameters
 
 Brainstorming treatments:
-R: herbicide/removal of invasive + reseeding sagebrush
-A: do nothing
-D: mechanical removal of sagebrush or 
+R: Herbicide/removal of invasive + reseeding sagebrush
+A: Do nothing
+D: Mechanical removal of sagebrush
 
 (Intention and hypothesis) Better management decisions are made when starting from RAD. 😬
 

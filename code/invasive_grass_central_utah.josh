@@ -47,9 +47,10 @@ end simulation
 start patch Default
 
   # Initialize with Central Utah appropriate starting conditions
-  invasiveCover.init = sample uniform from 2% to 15%
-  nativeCover.init = sample uniform from 8% to 18%  
-  shrubCover.init = sample uniform from 15% to 35%
+  # Read initial occupancy from external data in first year only
+  invasiveCover.start = external invasiveInitial if year == startYear else prior.invasiveCover
+  nativeCover.start = external nativeInitial if year == startYear else prior.nativeCover
+  shrubCover.start = external shrubInitial if year == startYear else prior.shrubCover
   
   # Management application tracking
   mechanicalTreatment.init = false
@@ -217,10 +218,28 @@ start external precipitation
   units = "mm"
 end external
 
-start external temperature  
+start external temperature
   file = "temperature.jshd"
   variable = "temperature"
   units = "degrees"
+end external
+
+start external invasiveInitial
+  file = "invasive_initial.jshd"
+  variable = "invasiveInitial"
+  units = "%"
+end external
+
+start external nativeInitial
+  file = "native_initial.jshd"
+  variable = "nativeInitial"
+  units = "%"
+end external
+
+start external shrubInitial
+  file = "shrub_initial.jshd"
+  variable = "shrubInitial"
+  units = "%"
 end external
 
 # Custom units

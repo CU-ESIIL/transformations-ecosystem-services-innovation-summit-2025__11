@@ -1,0 +1,60 @@
+# =============================================================================
+# INVASIVE GRASS MANAGEMENT SIMULATION - CENTRAL UTAH
+# Configuration file for educational exploration of management trade-offs
+# =============================================================================
+
+# =============================================================================
+# MANAGEMENT INTERVENTION LEVELS (Primary parameters for student experimentation)
+# =============================================================================
+
+# Management intensity (0-100% of landscape treated annually)
+# These are the main "policy levers" students should experiment with
+
+management.mechanical.coverage = 8 %          # Percent treated with mechanical thinning/mowing
+management.reseeding.coverage = 6 %           # Percent reseeded with native species  
+management.drought.resistant.coverage = 3 %  # Percent planted with drought-resistant varieties
+management.herbicide.coverage = 5 %          # Percent treated with selective herbicide
+
+# =============================================================================
+# ADVANCED ECOLOGICAL PARAMETERS (Optional - for deeper exploration)
+# =============================================================================
+
+# These parameters can be adjusted for more sophisticated investigations
+# Students can experiment with these to understand underlying ecological processes
+
+# Annual growth rates (existing populations) - Central Utah specific
+invasive.growth.rate = 22 %               # High due to favorable climate conditions
+native.growth.rate = 10 %                 # Moderate mountain west rates  
+shrub.growth.rate = 4.5 %                 # Slow woody perennial growth
+
+# Spread rates (colonization of empty space)  
+invasive.spread.rate = 32 %               # Rapid colonization ability of annual grasses
+native.spread.rate = 9 %                  # Limited by establishment requirements
+shrub.spread.rate = 5 %                   # Very limited seed dispersal
+
+# Fire probability parameters (central Utah regional conditions)
+base.fire.probability = 1.8 %             # Regional average fire occurrence
+invasive.fire.multiplier = 4.0 count      # High flammability when dry
+native.fire.multiplier = 1.0 count        # Baseline flammability
+shrub.fire.multiplier = 2.0 count         # Moderate fuel load contribution
+
+# Water use efficiency (based on root depth research)
+# These parameters reflect the mechanistic basis of species competition
+invasive.water.depth = 0.3 meters         # Shallow rooting (cheatgrass)
+native.water.depth = 1.5 meters           # Deep perennial roots (bunchgrass)
+shrub.water.depth = 3.0 meters            # Deepest water access (sagebrush)
+
+# =============================================================================
+# EDUCATIONAL NOTES
+# =============================================================================
+
+# Primary Focus for Students:
+# - Experiment with management.*.coverage parameters to explore policy trade-offs
+# - Questions to explore: "What if we double treatment area?" 
+# - "Is intensive treatment of small areas better than light treatment of large areas?"
+# - Compare carbon storage vs. native habitat scores under different strategies
+
+# Advanced Exploration:
+# - Modify growth/spread rates to understand ecological mechanisms
+# - Adjust fire parameters to explore climate change scenarios  
+# - Root depth differences explain why management strategies work differently

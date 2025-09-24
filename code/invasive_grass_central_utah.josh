@@ -1,0 +1,235 @@
+start simulation Main
+
+  # Central Utah Location - Sevier County region (critical sagebrush steppe ecosystem)
+  grid.size = 3000 m
+  grid.low = 38.13405812765913 degrees latitude, -112.14025074471213 degrees longitude
+  grid.high = 38.50575673940446 degrees latitude, -111.56007899393265 degrees longitude
+
+  # Simulation timeframe: 2030-2050 for educational efficiency
+  steps.low = 0 count
+  steps.high = 20 count
+
+  startYear.init = 2030
+  year.init = startYear
+  year.step = prior.year + 1
+
+  # Export configuration - save to memory for browser-based educational use
+  exportFiles.patch = "memory://editor/patches"
+
+  # Fire probability parameters (Central Utah specific)
+  fire.base.probability = 1.8%
+  fire.temperature.threshold = 22 degrees
+  fire.temperature.modifier = 0.15%
+  fire.precipitation.threshold = 300 mm
+  fire.precipitation.modifier = 0.8%
+  fire.invasive.coverage.modifier = 0.25%
+
+  # Species flammability multipliers
+  fire.invasive.multiplier = 4.0 count
+  fire.native.multiplier = 1.0 count  
+  fire.shrub.multiplier = 2.0 count
+
+  # Fire damage parameters
+  fire.damage.invasive = 95%
+  fire.damage.native = 90%
+  fire.damage.shrub = 85%
+
+  # Management effectiveness parameters
+  management.mechanical.invasive.reduction = 50%
+  management.reseeding.success.rate = 25%
+  management.drought.resistant.fire.reduction = 30%
+  management.drought.resistant.establishment.multiplier = 2.5 count
+  management.herbicide.reduction = 40%
+  management.herbicide.duration = 2 count
+
+end simulation
+
+start patch Default
+
+  # Initialize with Central Utah appropriate starting conditions
+  invasiveCover.init = sample uniform from 2% to 15%
+  nativeCover.init = sample uniform from 8% to 18%  
+  shrubCover.init = sample uniform from 15% to 35%
+  
+  # Management application tracking
+  mechanicalTreatment.init = false
+  reseedingTreatment.init = false
+  droughtResistantTreatment.init = false
+  herbicideTreatment.init = false
+  herbicideYearsRemaining.init = 0 count
+
+  # Calculate fire probability based on environmental conditions and coverage
+  temperatureRisk.step = {
+    const tempDiff = external temperature - meta.fire.temperature.threshold
+    const tempContribution = tempDiff * meta.fire.temperature.modifier if tempDiff > 0 degrees else 0%
+    return limit tempContribution to [0%, 10%]
+  }
+  
+  precipitationRisk.step = {
+    const precipDiff = meta.fire.precipitation.threshold - external precipitation
+    const precipContribution = (precipDiff / 50 mm) * meta.fire.precipitation.modifier if precipDiff > 0 mm else 0%
+    return limit precipContribution to [0%, 15%]
+  }
+  
+  coverageRisk.step = (prior.invasiveCover / 10%) * meta.fire.invasive.coverage.modifier
+  
+  managementReduction.step = meta.management.drought.resistant.fire.reduction if prior.droughtResistantTreatment else 0%
+  
+  fireProbability.step = {
+    const baseRisk = meta.fire.base.probability + temperatureRisk + precipitationRisk + coverageRisk
+    const adjustedRisk = baseRisk * (1 - managementReduction / 100%)
+    return limit adjustedRisk to [0%, 25%]
+  }
+  
+  onFire.step = (sample uniform from 0% to 100%) < fireProbability
+
+  # Calculate species growth rates based on precipitation
+  invasiveGrowth.step = map external precipitation from [180 mm, 500 mm] to [5%, 25%] sigmoid
+  nativeGrowth.step = map external precipitation from [200 mm, 450 mm] to [3%, 15%] sigmoid  
+  shrubGrowth.step = map external precipitation from [250 mm, 400 mm] to [1%, 8%] sigmoid
+
+  # Calculate spread rates (colonization of empty space)
+  emptySpace.step = limit (100% - prior.invasiveCover - prior.nativeCover - prior.shrubCover) to [0%, 100%]
+  
+  invasiveSpread.step = {
+    const maxSpread = emptySpace * 32% / 100%
+    const precipModifier = map external precipitation from [150 mm, 400 mm] to [0.3, 1.0] linear
+    return maxSpread * precipModifier
+  }
+  
+  nativeSpread.step = {
+    const maxSpread = emptySpace * 9% / 100%
+    const precipModifier = map external precipitation from [200 mm, 350 mm] to [0.2, 1.0] linear
+    const reseedingBonus = meta.management.reseeding.success.rate if prior.reseedingTreatment else 0%
+    const droughtBonus = meta.management.drought.resistant.establishment.multiplier if prior.droughtResistantTreatment else 1 count
+    return maxSpread * precipModifier * droughtBonus + (emptySpace * reseedingBonus / 100%)
+  }
+  
+  shrubSpread.step = {
+    const maxSpread = emptySpace * 5% / 100%  
+    const precipModifier = map external precipitation from [250 mm, 400 mm] to [0.1, 0.8] linear
+    return maxSpread * precipModifier
+  }
+
+  # Apply management treatments (simplified annual application)
+  mechanicalTreatment.step = (sample uniform from 0% to 100%) < config management.mechanical.coverage
+  reseedingTreatment.step = (sample uniform from 0% to 100%) < config management.reseeding.coverage  
+  droughtResistantTreatment.step = (sample uniform from 0% to 100%) < config management.drought.resistant.coverage
+  herbicideTreatment.step = (sample uniform from 0% to 100%) < config management.herbicide.coverage
+  
+  # Update herbicide duration tracking
+  herbicideYearsRemaining.step = {
+    if herbicideTreatment {
+      return meta.management.herbicide.duration
+    } elif prior.herbicideYearsRemaining > 0 count {
+      return prior.herbicideYearsRemaining - 1 count
+    } else {
+      return 0 count
+    }
+  }
+
+  # Calculate fire damage
+  invasiveDestruction.step = sample normal with mean of meta.fire.damage.invasive std of 10%
+  nativeDestruction.step = sample normal with mean of meta.fire.damage.native std of 15%
+  shrubDestruction.step = sample normal with mean of meta.fire.damage.shrub std of 20%
+
+  # Apply management effects on invasive grass
+  mechanicalReduction.step = meta.management.mechanical.invasive.reduction if mechanicalTreatment else 0%
+  herbicideReduction.step = meta.management.herbicide.reduction if herbicideYearsRemaining > 0 count else 0%
+  
+  totalInvasiveReduction.step = limit (mechanicalReduction + herbicideReduction) to [0%, 95%]
+
+  # Update species coverage
+  invasiveCover.step = {
+    const afterFire = prior.invasiveCover * (1 - invasiveDestruction / 100%) if onFire else prior.invasiveCover
+    const afterGrowth = afterFire + (afterFire * invasiveGrowth / 100%) + invasiveSpread
+    const afterManagement = afterGrowth * (1 - totalInvasiveReduction / 100%)
+    return limit afterManagement to [0%, 100%]
+  }
+
+  nativeCover.step = {
+    const afterFire = prior.nativeCover * (1 - nativeDestruction / 100%) if onFire else prior.nativeCover
+    const afterGrowth = afterFire + (afterFire * nativeGrowth / 100%) + nativeSpread
+    return limit afterGrowth to [0%, 100%]
+  }
+
+  shrubCover.step = {
+    const afterFire = prior.shrubCover * (1 - shrubDestruction / 100%) if onFire else prior.shrubCover  
+    const afterGrowth = afterFire + (afterFire * shrubGrowth / 100%) + shrubSpread
+    return limit afterGrowth to [0%, 100%]
+  }
+
+  # Calculate total coverage and adjust for overlap
+  totalCover.step = invasiveCover + nativeCover + shrubCover
+  
+  # Normalize if total exceeds 100% (competition for space)
+  invasiveCover.end = {
+    if totalCover > 100% {
+      return invasiveCover * 100% / totalCover
+    } else {
+      return invasiveCover
+    }
+  }
+  
+  nativeCover.end = {
+    if totalCover > 100% {
+      return nativeCover * 100% / totalCover  
+    } else {
+      return nativeCover
+    }
+  }
+  
+  shrubCover.end = {
+    if totalCover > 100% {
+      return shrubCover * 100% / totalCover
+    } else {
+      return shrubCover
+    }
+  }
+
+  # Calculate ecosystem metrics for scoring
+  carbonStorage.step = {
+    const shrubCarbon = shrubCover * 310 / 100%
+    const nativeCarbon = nativeCover * 140 / 100%  
+    const invasiveCarbon = invasiveCover * 120 / 100%
+    return shrubCarbon + nativeCarbon + invasiveCarbon
+  }
+  
+  nativeScore.step = (shrubCover * 1.2) + (nativeCover * 1.0)
+
+  # Export key variables for analysis
+  export.invasiveCover.step = invasiveCover
+  export.nativeCover.step = nativeCover
+  export.shrubCover.step = shrubCover
+  export.fireProbability.step = fireProbability
+  export.onFire.step = onFire
+  export.carbonStorage.step = carbonStorage
+  export.nativeScore.step = nativeScore
+  export.precipitation.step = external precipitation
+  export.temperature.step = external temperature
+
+end patch
+
+# External data references
+start external precipitation
+  file = "precipitation.jshd"
+  variable = "precipitation"
+  units = "mm"
+end external
+
+start external temperature  
+  file = "temperature.jshd"
+  variable = "temperature"
+  units = "degrees"
+end external
+
+# Custom units
+start unit mm
+  alias millimeters
+  alias millimeter
+  m = current / 1000
+end unit
+
+start unit degrees
+  alias degree
+end unit

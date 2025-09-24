@@ -25,22 +25,15 @@ We will conduct a case study on a specific ecosystem to explore how implementati
 # Our question(s) 📣
 
 1. How and when to decide what the appropriate system is for modeling the RAD approach? (model/case)
-
 a. What types of systems is this being used in?
-
-b. Can we identify management "categories" within each component of RAD?
-
+b. Can we identify management “categories” within each component of RAD?
 2. How might decision making change within the RAD framework based on the ecosystem service being provided? (case)
-
 a. Specific to the case study we choose
-
-3. How balanced are the different sectors of the RAD approach? E.g. is the "Direct" approach not frequently used. (case)
-
+3. How balanced are the different sectors of the RAD approach? E.g. is the “Direct” approach not frequently used. (case)
 a. Should a manager start with RAD, or end with RAD?
-
 4. How does RAD incorporate qualitative data / perspectives / lived experiences of stakeholders in the system? (case)
-
 5. How can the experience of modeling improve the application of RAD? (model)
+
 
 # Hypotheses / intentions
 

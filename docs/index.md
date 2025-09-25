@@ -27,7 +27,9 @@ In a changing world many environmental transformations will be inevitable or ver
 **H2: Biomass of specific plant species will change depending on the RAD action. Specifically: the highest biomass of sagebrush, native grass and cheatgrass will occur in the R, D and A treatments, respectively.** 
 
 ## List of parameters
-(Courtney insert conceptual figure)
+![Conceptual Figure](assets/RAD_conceptual_new.png)
+*Figure 1: Conceptual diagram of possibilities for applying RAD in a sagebrush ecosystem.*
+  
 Brainstorming treatments:
 R: Herbicide/removal of invasive + reseeding sagebrush
 A: Do nothing

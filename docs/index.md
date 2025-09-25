@@ -149,7 +149,11 @@ Modeling figures
 ### Visuals that tell the story 📣
 <!-- EDIT: Swap visuals; prioritize clarity. -->
 
+**We should empower those on the ground to blend approaches across RAD but where modeling can be made available rapidly to offer confidence in those decisions.**
+
 ![Model outcomes](assets/outcome_overview.png)
+
+Accepting is acceptable but blended offers the most robust benefits acorss carbon and native establishment.
 
 ![Lead conclusion visual placeholder](assets/fire_hull.png)
 [Raw photo location: fire_hull.png](https://github.com/CU-ESIIL/Project_group_OASIS/blob/main/docs/assets/fire_hull.png)

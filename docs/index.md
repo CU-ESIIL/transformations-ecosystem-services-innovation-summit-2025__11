@@ -142,7 +142,30 @@ Modeling figures
 ### Findings at a glance 📣
 <!-- EDIT: 2–4 bullets, each a headline in plain language with a number if possible. -->
 - Case Study Finding:
-- Model Finding:
+- Model Finding: We should empower those on the ground to blend approaches across RAD but where modeling can be made available rapidly to offer confidence in those decisions.
+
+![Model outcomes](assets/outcome_overview.png)
+
+Accepting is acceptable but blended offers the most robust benefits acorss carbon and native establishment.
+
+![Lead conclusion visual placeholder](assets/fire_hull.png)
+[Raw photo location: fire_hull.png](https://github.com/CU-ESIIL/Project_group_OASIS/blob/main/docs/assets/fire_hull.png)
+*Visual 1.* Swap in the primary graphic that clearly communicates your core takeaway.
+
+![Supporting panels for key insights](assets/hull_panels.png)
+[Raw photo location: hull_panels.png](https://github.com/CU-ESIIL/Project_group_OASIS/blob/main/docs/assets/hull_panels.png)
+*Visual 2.* Use a complementary panel, collage, or set of snapshots that reinforces supporting evidence.
+
+![Complementary result figure placeholder](assets/main_result.png)
+[Raw photo location: main_result.png](https://github.com/CU-ESIIL/Project_group_OASIS/blob/main/docs/assets/main_result.png)
+*Visual 3.* Highlight an additional visual that captures a secondary insight or next step.
+
+<iframe
+  title="Short explainer video (optional)"
+  width="100%" height="360"
+  src="https://www.youtube.com/embed/ASTGFZ0d6Ps"
+  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen></iframe>
 
 ### What’s next? 📣
 - Immediate follow-ups

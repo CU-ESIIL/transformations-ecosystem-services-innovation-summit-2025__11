@@ -104,27 +104,6 @@ In a changing world many environmental transformations will be inevitable or ver
 - **Accept** strategies:
 - **Direct** strategies:
 
-### Challenges identified
-- We are characterizing a very complex system in < 12 hours.
-- etc.
-
-### Visuals
-<!-- EDIT: Swap examples; keep file sizes modest. -->
-
-
-
-#### Static figure
-Background figures
-- Stakeholders (nate)
-- Sage cover (Nayani + Julie)
-- Climate (nate)
-Modeling figures
-- 100% for each management strategy (Sam)
-- Combination (Sam)
-
-#### Animated change (GIF)
-- Video of model running (Sam)
-
 #### Interactive map - Study Area Centroid
 <iframe
   title="Study area (OpenStreetMap)"
@@ -148,13 +127,22 @@ Modeling figures
 
 Accepting is acceptable but blended offers the most robust benefits acorss carbon and native establishment.
 
+### Challenges / Limitations
 
-### What’s next? 📣
-- Immediate follow-ups
-- What we would do with one more week/month
-- Who should see this next
+_timing_ - we aspired to meet more in the middle between case study and actual modelling applications:
+- RE: transition probabilities, management scenarios, didn't arrive at our resultant ideas early enough - for example - decadent stand <-> naiive sagebrush removal
+- similarly some misapplication of management application (thinning targeting cheatgrass rather than `decadent` sagebrush)
 
----
+_validation_ - based on LTER line transects within target area, based on spectral unmixing, based on ... ? How can we validate our model outcomes, responsibly?
+
+_parameterization_ - super-abbreviated and claude-accelerated lit review of transition probabilities and other patch-based model dynamics - *much more of an emphasis on teasing out differences in management outcomes rather than internal ecological validity*
+
+### Caveats
+
+**These should not be interpreted as management implications.**
+
+**in general - our hope is to use our tool to help managers tease out the nuance within the D aspect of RAD - especially in situations where novel fire regimes / invasions / climate scenarios make management a challenging out-of-sample prediction problem.**
+
 
 ## Team
 | Name | Sub Group | 

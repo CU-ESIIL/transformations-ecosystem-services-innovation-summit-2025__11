@@ -103,7 +103,7 @@ In a changing world many environmental transformations will be inevitable or ver
 Background figures
 - Stakeholders (nate)
 - Sage cover (Nayani + Julie)
-- ![Treatment effects on Sagebrush cover](docs/assets/seeding_mastication.png)
+- ![Treatment effects on Sagebrush cover](assets/seeding_mastication.png)
 - Climate (nate)
 Modeling figures
 - 100% for each management strategy (Sam)

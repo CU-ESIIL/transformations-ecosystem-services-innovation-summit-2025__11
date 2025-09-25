@@ -70,19 +70,19 @@ In a changing world many environmental transformations will be inevitable or ver
 *Figure 4: Sagebrush Conservation Design Core-Growth-Other classess for our study area. 'Core' represents in-tact sagebrush habitat, 'Grow' represents slightly degraded habitat where management actions for expanding sage habitat can be focused.*
 
 **(2) Characterize the study region**
-- ## Vegetation community
+- ### Vegetation community
   ![RCMAP Study Area!](assets/vegCover_studyArea.jpg "RCMAP_Cover")
   *Figure 5: Vegetation cover of the study area from RCMAP cover classes.*
-- ## Climate
-  ### Precipitation 
+- ### Climate
+- ### Precipitation 
   ![Summer Precipitation - Climate Toolbox](assets/precip_studyArea.png)
   *Figure 6: Summer precipitation (June-August, in mm) for our study area, predicted for 2031-2060 using the SSP4.5 scenario using [climatetoolbox.org](https://climatetoolbox.org/tool/Climate-Mapper)*
 
-  ### Temperature
+ - ### Temperature
   ![Max Temperature (Annual) - Climate Toolbox](assets/maxTempAnnual_studyArea.png)
   *Figure 7: Annual maximum temperatrure (degrees C) for our study area, predicted for 2031-2060 using the SSP4.5 scenario using [climatetoolbox.org](https://climatetoolbox.org/tool/Climate-Mapper)*
 
-- ## Managament
+- ### Managament
   ![TWIG Management Polygons](assets/management_studyArea.png)
   *Figure 8: TWIG Data Viewer, mamagement polygons for our study area. Data source: [TWIG Interactive Data Viewer](https://reshapewildfire.org/twig/layers?treatmentRendererId=f7da47bfbb4245b68871fa13acbf3723)*
 
@@ -94,7 +94,7 @@ In a changing world many environmental transformations will be inevitable or ver
   ![Treatment effects on Sagebrush cover](assets/sagebrush_cover_time_series2.png)
   *Figure 10: TWIG treatments for out study area impact on Sage cover.*
 
-- ## Stakeholders  
+- ### Stakeholders  
   ![Surface Management for the Study Area](assets/sma_studyArea.png)
   *Figure 11: Surface Management Areas (SMA) for the study region. Our sage habitat is primarily managed by the State of Utah and the Bureau of Land Management (BLM). Data source: [BLM Utah Interactive Web Map](https://blm-egis.maps.arcgis.com/apps/instant/sidebar/index.html?appid=e84f92a84afb44b1ad7f65984332b4f2)*
 

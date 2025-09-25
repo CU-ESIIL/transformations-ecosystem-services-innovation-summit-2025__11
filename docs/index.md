@@ -8,7 +8,9 @@ HERO (Swap hero.jpg, title, strapline, and the three links)
 
 
 ![Sagebrush!](assets/blm_Sagebrush.jpg "Sagebrush")
-*Figure 1*: [sam insert image credit here]
+*Figure 1*: [BLM/Heather Feeney]
+BLM/Heather Feeney.
+
 
 # Our product 📣
 We will conduct a case study on a specific ecosystem to explore how implementation of the RAD management framework affects different ecosystem services (and thus different stakeholders) in various ways. We will use the information gathered through this case study as an input into a model to predict how prioritization of certain ecosystem services may demand different approaches within the RAD framework. Our product will be a static markdown document that describes our case study and the findings of that exploration as well as the development and outcomes of the model. We will include a code repository with the document.

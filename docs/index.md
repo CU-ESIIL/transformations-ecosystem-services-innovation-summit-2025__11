@@ -116,9 +116,9 @@ Modeling figures
 #### Interactive map (iframe)
 <iframe
   title="Study area (OpenStreetMap)"
-  src="https://www.openstreetmap.org/export/embed.html?bbox=-105.35%2C39.90%2C-105.10%2C40.10&layer=mapnik&marker=40.000%2C-105.225"
+  src="https://www.openstreetmap.org/export/embed.html?bbox=-111.8558118962267%2C38.32357762768794%2C-111.8558118962267%2C38.32357762768794&layer=mapnik&marker=38.32357762768794%2C-111.8558118962267"
   width="100%" height="360" frameborder="0"></iframe>
-<p><a href="https://www.openstreetmap.org/?mlat=40.000&mlon=-105.225#map=12/40.0000/-105.2250">Open full map</a></p>
+<p><a href="https://www.openstreetmap.org/?mlat=38.32357762768794&mlon=-111.8558118962267#map=12/38.32357762768794/-111.8558118962267">Open full map</a></p>
 
 > If an embed doesn’t load, put the normal link directly under it.
 

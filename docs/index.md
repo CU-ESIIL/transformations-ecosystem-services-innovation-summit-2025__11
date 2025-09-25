@@ -8,7 +8,9 @@ HERO (Swap hero.jpg, title, strapline, and the three links)
 
 
 ![Sagebrush!](assets/blm_Sagebrush.jpg "Sagebrush")
-*Figure 1*: [sam insert image credit here]
+*Figure 1*: [BLM/Heather Feeney]
+BLM/Heather Feeney.
+
 
 # Our product 📣
 We will conduct a case study on a specific ecosystem to explore how implementation of the RAD management framework affects different ecosystem services (and thus different stakeholders) in various ways. We will use the information gathered through this case study as an input into a model to predict how prioritization of certain ecosystem services may demand different approaches within the RAD framework. Our product will be a static markdown document that describes our case study and the findings of that exploration as well as the development and outcomes of the model. We will include a code repository with the document.
@@ -24,6 +26,7 @@ We will conduct a case study on a specific ecosystem to explore how implementati
 ## List of parameters
 ![conceptual figure](assets/RAD_conceptual_new.png)
 *Figure 2: Conceptual diagram of potential applications of the RAD framework to the Sagebrush ecosystem. Sagebrush image credit: Oregon State University*
+
 
 # Why this matters (the "upshot") 📣
 
@@ -45,13 +48,9 @@ In a changing world many environmental transformations will be inevitable or ver
 | Vegetation Cover | - Perennial grasses | Annual | 30m |
 | Vegetation Cover | - Annual grasses | Annual | 30m |
 | Vegetation Cover | - Sagebrush | Annual | 30m |
-| Climate | Annual precipitation | Historical + Projections | TBD |
-| Climate | Annual mean temperature | Historical + Projections | TBD |
+| Climate | [CHC-CMIP6](https://www.chc.ucsb.edu/data/chc-cmip6) | SSP245 (2030-2050) | 5km |
 | Stakeholders | [Bureau of Land Management (BLM) Surface Management Data](https://gbp-blm-egis.hub.arcgis.com/datasets/BLM-EGIS::blm-ut-surface-management-agency-polygon/about) | N/A | N/A |
 | Management Treatment | [Treatment and Wildfire Interagency Geodatabase (TWIG)](https://reshapewildfire.org/resources/twig-data-resources) | 2000-2025 | acre |
-| Management Treatment | - Mechanical removal | TBD | TBD |
-| Management Treatment | - Seeding native species | TBD | TBD |
-| Management Treatment | - Herbicide application | TBD | TBD |
 
 ### Methods / technologies we’re testing 📣
 **(1) Choose a study region**
@@ -62,28 +61,33 @@ In a changing world many environmental transformations will be inevitable or ver
 *Figure 4: Sagebrush Conservation Design Core-Growth-Other classess for our study area. 'Core' represents in-tact sagebrush habitat, 'Grow' represents slightly degraded habitat where management actions for expanding sage habitat can be focused.*
 
 **(2) Characterize the study region**
-- ## Vegetation community
+- ### Vegetation community
   ![RCMAP Study Area!](assets/vegCover_studyArea.jpg "RCMAP_Cover")
   *Figure 5: Vegetation cover of the study area from RCMAP cover classes.*
-- ## Climate
-  ### Precipitation 
+- ### Climate
+- ### Precipitation 
   ![Summer Precipitation - Climate Toolbox](assets/precip_studyArea.png)
   *Figure 6: Summer precipitation (June-August, in mm) for our study area, predicted for 2031-2060 using the SSP4.5 scenario using [climatetoolbox.org](https://climatetoolbox.org/tool/Climate-Mapper)*
 
-  ### Temperature
+ - ### Temperature
   ![Max Temperature (Annual) - Climate Toolbox](assets/maxTempAnnual_studyArea.png)
   *Figure 7: Annual maximum temperatrure (degrees C) for our study area, predicted for 2031-2060 using the SSP4.5 scenario using [climatetoolbox.org](https://climatetoolbox.org/tool/Climate-Mapper)*
 
-- ## Managament
+- ### Managament
   ![TWIG Management Polygons](assets/management_studyArea.png)
   *Figure 8: TWIG Data Viewer, mamagement polygons for our study area. Data source: [TWIG Interactive Data Viewer](https://reshapewildfire.org/twig/layers?treatmentRendererId=f7da47bfbb4245b68871fa13acbf3723)*
 
-  ![Treatment effects on Sagebrush cover](assets/sagebrush_cover_time_series2.png)
-  *Figure 9: TWIG treatments for out study area impact on Sage cover.*
 
-- ## Stakeholders  
+  ![Percent Sagebrush Cover 1985 and 2024](assets/sage_cover_1985_2024.png)
+  *Figure 9: Percent Sagebrush Cover 1985 and 2024 from RCMAP data.*
+  
+  
+  ![Treatment effects on Sagebrush cover](assets/sagebrush_cover_time_series2.png)
+  *Figure 10: TWIG treatments for out study area impact on Sage cover.*
+
+- ### Stakeholders  
   ![Surface Management for the Study Area](assets/sma_studyArea.png)
-  *Figure 10: Surface Management Areas (SMA) for the study region. Our sage habitat is primarily managed by the State of Utah and the Bureau of Land Management (BLM). Data source: [BLM Utah Interactive Web Map](https://blm-egis.maps.arcgis.com/apps/instant/sidebar/index.html?appid=e84f92a84afb44b1ad7f65984332b4f2)*
+  *Figure 11: Surface Management Areas (SMA) for the study region. Our sage habitat is primarily managed by the State of Utah and the Bureau of Land Management (BLM). Data source: [BLM Utah Interactive Web Map](https://blm-egis.maps.arcgis.com/apps/instant/sidebar/index.html?appid=e84f92a84afb44b1ad7f65984332b4f2)*
 
 **(3) Model RAD management scenarios across the study region** 
 (Sam or Nick write section about JOSH + Claude)

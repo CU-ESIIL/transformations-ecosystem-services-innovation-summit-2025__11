@@ -148,6 +148,9 @@ Modeling figures
 
 ### Visuals that tell the story 📣
 <!-- EDIT: Swap visuals; prioritize clarity. -->
+
+![Model outcomes](assets/outcome_overview.png)
+
 ![Lead conclusion visual placeholder](assets/fire_hull.png)
 [Raw photo location: fire_hull.png](https://github.com/CU-ESIIL/Project_group_OASIS/blob/main/docs/assets/fire_hull.png)
 *Visual 1.* Swap in the primary graphic that clearly communicates your core takeaway.

@@ -8,12 +8,9 @@ HERO (Swap hero.jpg, title, strapline, and the three links)
 
 
 ![Sagebrush!](assets/blm_Sagebrush.jpg "Sagebrush")
+*Figure 1*: [sam insert image credit here]
 
-# Our product 📣 (Nate)
-1. Characterize an example of sagebrush habitat in south-central Utah. We will quantify the cover of imporant vegetation types, characterize treatments, climate variables, and stakeholders.
-2. 
-
-
+# Our product 📣
 We will conduct a case study on a specific ecosystem to explore how implementation of the RAD management framework affects different ecosystem services (and thus different stakeholders) in various ways. We will use the information gathered through this case study as an input into a model to predict how prioritization of certain ecosystem services may demand different approaches within the RAD framework. Our product will be a static markdown document that describes our case study and the findings of that exploration as well as the development and outcomes of the model. We will include a code repository with the document.
 
 # Our question 📣
@@ -45,43 +42,48 @@ In a changing world many environmental transformations will be inevitable or ver
 ## Day 2 — Data & Methods
 *The sagebrush biome is MASSIVE.*
 ![Massive Sage Biome and Annual invasive grasses](assets/sagebrush_extent.png)
-*The sagebrush biome is outlined in blue here. Annual grass cover % is shown here, from low (green) to high (red). Image credit: [Rangeland Analysis Platform (RAP) Partner Tool: Cheatgrass](https://conservation-maps.wlfw.org/?sg_biome_v=true&ll=42.4017,-125.4102&z=5&basemap=hybrid&sg_biome_o=0.99&scd_o=1&tab=0&gp_biome_ext_v=true&ann_hc_v=true)*
+*Figure 2:The sagebrush biome is outlined in blue here. Annual grass cover % is shown here, from low (green) to high (red). Image credit: [Rangeland Analysis Platform (RAP) Partner Tool: Cheatgrass](https://conservation-maps.wlfw.org/?sg_biome_v=true&ll=42.4017,-125.4102&z=5&basemap=hybrid&sg_biome_o=0.99&scd_o=1&tab=0&gp_biome_ext_v=true&ann_hc_v=true)*
 
 
-### Data sources we’re exploring 📣 
+### Data sources we're exploring 📣 
 <!-- EDIT: Link each source; add size/notes if relevant. -->
-(Nate add table of data sources)
-**Source: RCMAP**
-- Cover data
-  - Perennial grasses
-  - Annual grasses
-  - Sagebrush
 
-**Source: Climate Data**
-- Annual precipitation
-- Annual mean temperature
-- (Insert some information here about the projections we're using)
-
-**Source: Stakeholders**
-- Utah State
-- Bureau of Land Management (BLM)
-
-**Source: Management Treatments**
-- TWIG data
-  - Mechanical removal of grasses and sagebrush
-  - Seeding in native species
-  - Herbicide 
+| Category | Source | Temporal Range | Spatial Resolution |
+|----------|--------|----------------|-------------------|
+| Vegetation Cover | [RCMAP (USGS/NLCD)](https://www.mrlc.gov/data?cookiesession8341=0DA6D8B667926AE7FF45A7A41D2481BC) | 1985-2024 | 30m |
+| Vegetation Cover | - Perennial grasses | Annual | 30m |
+| Vegetation Cover | - Annual grasses | Annual | 30m |
+| Vegetation Cover | - Sagebrush | Annual | 30m |
+| Climate | Annual precipitation | Historical + Projections | TBD |
+| Climate | Annual mean temperature | Historical + Projections | TBD |
+| Stakeholders | [Bureau of Land Management (BLM) Surface Management Data](https://gbp-blm-egis.hub.arcgis.com/datasets/BLM-EGIS::blm-ut-surface-management-agency-polygon/about) | N/A | N/A |
+| Management Treatment | [Treatment and Wildfire Interagency Geodatabase (TWIG)](https://reshapewildfire.org/resources/twig-data-resources) | 2000-2025 | acre |
+| Management Treatment | - Mechanical removal | TBD | TBD |
+| Management Treatment | - Seeding native species | TBD | TBD |
+| Management Treatment | - Herbicide application | TBD | TBD |
 
 ### Methods / technologies we’re testing 📣
 **(1) Choose a study region**
-- How we did this
-- Insert core area map
+![Defend the Core - Grow the Core](assets/defend_grow_core.jpg)
+*Figure 3: Defend the core, grow the core conceptual figure. This strategy, proposed by the USDA-NRCS, suggests focusing management actions on in-tact core areas and expanding sage into growth areas. Image credit: [USDA-NRCS](https://www.wlfw.org/publication-alert-defend-the-core-maintaining-intact-rangelands-by-reducing-vulnerability-to-invasive-annual-grasses/)*
+
+![Sagebrush Conservation Design - Study Area](assets/studyArea_core.png)
+*Figure 4: Sagebrush Conservation Design Core-Growth-Other classess for our study area. 'Core' represents in-tact sagebrush habitat, 'Grow' represents slightly degraded habitat where management actions for expanding sage habitat can be focused.*
 
 **(2) Characterize the study region**
 - Vegetation community
   ![RCMAP Study Area!](assets/vegCover_studyArea.jpg "RCMAP_Cover")
+  *Figure 5: Vegetation cover of the study area from RCMAP cover classes.*
 - Climate
+  ![Summer Precipitation - Climate Toolbox](assets/precip_studyArea.png)
+  *Figure 6: Summer precipitation (June-August, in mm) for our study area, predicted for 2031-2060 using the SSP4.5 scenario using [climatetoolbox.org](https://climatetoolbox.org/tool/Climate-Mapper)*
+
+  ![Max Temperature (Annual) - Climate Toolbox](assets/maxTempAnnual_studyArea.png)
+  *Figure 7: Annual maximum temperatrure (degrees C) for our study area, predicted for 2031-2060 using the SSP4.5 scenario using [climatetoolbox.org](https://climatetoolbox.org/tool/Climate-Mapper)*
+
 - Managament
+
+
 - Stakeholders  
 
 **(3) Model RAD management scenarios across the study region** 

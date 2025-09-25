@@ -86,12 +86,17 @@ In a changing world many environmental transformations will be inevitable or ver
   ![TWIG Management Polygons](assets/management_studyArea.png)
   *Figure 8: TWIG Data Viewer, mamagement polygons for our study area. Data source: [TWIG Interactive Data Viewer](https://reshapewildfire.org/twig/layers?treatmentRendererId=f7da47bfbb4245b68871fa13acbf3723)*
 
+
+  ![Percent Sagebrush Cover 1985 and 2024](assets/sage_cover_1985_2024.png)
+  *Figure 9: Percent Sagebrush Cover 1985 and 2024 from RCMAP data.*
+  
+  
   ![Treatment effects on Sagebrush cover](assets/sagebrush_cover_time_series2.png)
-  *Figure 9: TWIG treatments for out study area impact on Sage cover.*
+  *Figure 10: TWIG treatments for out study area impact on Sage cover.*
 
 - ## Stakeholders  
   ![Surface Management for the Study Area](assets/sma_studyArea.png)
-  *Figure 10: Surface Management Areas (SMA) for the study region. Our sage habitat is primarily managed by the State of Utah and the Bureau of Land Management (BLM). Data source: [BLM Utah Interactive Web Map](https://blm-egis.maps.arcgis.com/apps/instant/sidebar/index.html?appid=e84f92a84afb44b1ad7f65984332b4f2)*
+  *Figure 11: Surface Management Areas (SMA) for the study region. Our sage habitat is primarily managed by the State of Utah and the Bureau of Land Management (BLM). Data source: [BLM Utah Interactive Web Map](https://blm-egis.maps.arcgis.com/apps/instant/sidebar/index.html?appid=e84f92a84afb44b1ad7f65984332b4f2)*
 
 **(3) Model RAD management scenarios across the study region** 
 (Sam or Nick write section about JOSH + Claude)

@@ -24,10 +24,10 @@ herbicide.coverage = 5 %          # Percent treated with selective herbicide
 
 # Annual growth rates (existing populations) - Central Utah specific
 invasive.growth.rate = 22 %               # High due to favorable climate conditions
-native.growth.rate = 10 %                 # Moderate mountain west rates  
+native.growth.rate = 10 %                 # Moderate mountain west rates
 shrub.growth.rate = 4.5 %                 # Slow woody perennial growth
 
-# Spread rates (colonization of empty space)  
+# Spread rates (colonization of empty space)
 invasive.spread.rate = 32 %               # Rapid colonization ability of annual grasses
 native.spread.rate = 9 %                  # Limited by establishment requirements
 shrub.spread.rate = 5 %                   # Very limited seed dispersal
@@ -50,11 +50,11 @@ shrub.water.depth = 3.0 meters            # Deepest water access (sagebrush)
 
 # Primary Focus for Students:
 # - Experiment with *.coverage parameters to explore policy trade-offs
-# - Questions to explore: "What if we double treatment area?" 
+# - Questions to explore: "What if we double treatment area?"
 # - "Is intensive treatment of small areas better than light treatment of large areas?"
 # - Compare carbon storage vs. native habitat scores under different strategies
 
 # Advanced Exploration:
 # - Modify growth/spread rates to understand ecological mechanisms
-# - Adjust fire parameters to explore climate change scenarios  
+# - Adjust fire parameters to explore climate change scenarios
 # - Root depth differences explain why management strategies work differently

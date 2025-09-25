@@ -113,10 +113,10 @@ start patch Default
   }
 
   # Apply management treatments (simplified annual application)
-  mechanicalTreatment.step = (sample uniform from 0% to 100%) < config mechanical.coverage
-  reseedingTreatment.step = (sample uniform from 0% to 100%) < config reseeding.coverage
-  droughtResistantTreatment.step = (sample uniform from 0% to 100%) < config drought.resistant.coverage
-  herbicideTreatment.step = (sample uniform from 0% to 100%) < config herbicide.coverage
+  mechanicalTreatment.step = (sample uniform from 0% to 100%) < config editor.mechanical.coverage
+  reseedingTreatment.step = (sample uniform from 0% to 100%) < config editor.reseeding.coverage
+  droughtResistantTreatment.step = (sample uniform from 0% to 100%) < config editor.drought.resistant.coverage
+  herbicideTreatment.step = (sample uniform from 0% to 100%) < config editor.herbicide.coverage
   
   # Update herbicide duration tracking
   herbicideYearsRemaining.step = {

@@ -14,7 +14,7 @@ start simulation Main
   year.step = prior.year + 1
 
   # Export configuration - save to memory for browser-based educational use
-  exportFiles.patch = "memory://editor/patches"
+  exportFiles.patch = "file://result.csv"
 
   # Fire probability parameters (Central Utah specific)
   fire.base.probability = 1.8%

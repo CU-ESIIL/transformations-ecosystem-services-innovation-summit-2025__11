@@ -47,7 +47,6 @@ In a changing world many environmental transformations will be inevitable or ver
 
 ### Data sources we're exploring 📣 
 <!-- EDIT: Link each source; add size/notes if relevant. -->
-
 | Category | Source | Temporal Range | Spatial Resolution |
 |----------|--------|----------------|-------------------|
 | Vegetation Cover | [RCMAP (USGS/NLCD)](https://www.mrlc.gov/data?cookiesession8341=0DA6D8B667926AE7FF45A7A41D2481BC) | 1985-2024 | 30m |
@@ -105,7 +104,7 @@ In a changing world many environmental transformations will be inevitable or ver
 Background figures
 - Stakeholders (nate)
 - Sage cover (Nayani + Julie)
-- Treatments (Nayani)
+- ![Treatment effects on Sagebrush cover](assets/sagebrush_cover_time_series2.png)
 - Climate (nate)
 Modeling figures
 - 100% for each management strategy (Sam)

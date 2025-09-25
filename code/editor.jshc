@@ -1,4 +1,29 @@
-mechanicalCoverage = 8 %
-reseedingCoverage = 6 %
-droughtResistantCoverage = 3 %
-herbicideCoverage = 5 %
+# == Thinning ==
+# mechanicalCoverage = 20 %
+# reseedingCoverage = 0 %
+# droughtResistantCoverage = 0 %
+# herbicideCoverage = 0 %
+
+# == Reseeding ==
+# mechanicalCoverage = 0 %
+# reseedingCoverage = 15 %
+# droughtResistantCoverage = 0 %
+# herbicideCoverage = 0 %
+
+# == Drought Resistant ==
+# mechanicalCoverage = 0 %
+# reseedingCoverage = 0 %
+# droughtResistantCoverage = 10 %
+# herbicideCoverage = 0 %
+
+# == Herbicide ==
+# mechanicalCoverage = 0 %
+# reseedingCoverage = 0 %
+# droughtResistantCoverage = 0 %
+# herbicideCoverage = 15 %
+
+# == Balanced ==
+mechanicalCoverage = 12 %
+reseedingCoverage = 8 %
+droughtResistantCoverage = 4 %
+herbicideCoverage = 6 %

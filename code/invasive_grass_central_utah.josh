@@ -48,9 +48,9 @@ start patch Default
 
   # Initialize with Central Utah appropriate starting conditions
   # Read initial occupancy from external data in first year only
-  invasiveCover.start = external invasiveInitial if meta.year == meta.startYear else prior.invasiveCover
-  nativeCover.start = external nativeInitial if meta.year == meta.startYear else prior.nativeCover
-  shrubCover.start = external shrubInitial if meta.year == meta.startYear else prior.shrubCover
+  invasiveCover.start = external invasive_initial if meta.year == meta.startYear else prior.invasiveCover
+  nativeCover.start = external native_initial if meta.year == meta.startYear else prior.nativeCover
+  shrubCover.start = external shrub_initial if meta.year == meta.startYear else prior.shrubCover
   
   # Management application tracking
   mechanicalTreatment.init = false
@@ -224,21 +224,21 @@ start external temperature
   units = "degrees"
 end external
 
-start external invasiveInitial
+start external invasive_initial
   file = "invasive_initial.jshd"
-  variable = "invasiveInitial"
+  variable = "invasive_initial"
   units = "%"
 end external
 
-start external nativeInitial
+start external native_initial
   file = "native_initial.jshd"
-  variable = "nativeInitial"
+  variable = "native_initial"
   units = "%"
 end external
 
-start external shrubInitial
+start external shrub_initial
   file = "shrub_initial.jshd"
-  variable = "shrubInitial"
+  variable = "shrub_initial"
   units = "%"
 end external
 

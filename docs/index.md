@@ -57,13 +57,9 @@ In a changing world many environmental transformations will be inevitable or ver
 | Vegetation Cover | - Perennial grasses | Annual | 30m |
 | Vegetation Cover | - Annual grasses | Annual | 30m |
 | Vegetation Cover | - Sagebrush | Annual | 30m |
-| Climate | Annual precipitation | Historical + Projections | TBD |
-| Climate | Annual mean temperature | Historical + Projections | TBD |
+| Climate | [CHC-CMIP6](https://www.chc.ucsb.edu/data/chc-cmip6) | SSP245 (2030-2050) | 5km |
 | Stakeholders | [Bureau of Land Management (BLM) Surface Management Data](https://gbp-blm-egis.hub.arcgis.com/datasets/BLM-EGIS::blm-ut-surface-management-agency-polygon/about) | N/A | N/A |
 | Management Treatment | [Treatment and Wildfire Interagency Geodatabase (TWIG)](https://reshapewildfire.org/resources/twig-data-resources) | 2000-2025 | acre |
-| Management Treatment | - Mechanical removal | TBD | TBD |
-| Management Treatment | - Seeding native species | TBD | TBD |
-| Management Treatment | - Herbicide application | TBD | TBD |
 
 ### Methods / technologies we’re testing 📣
 **(1) Choose a study region**

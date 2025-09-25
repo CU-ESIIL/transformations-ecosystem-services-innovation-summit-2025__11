@@ -79,6 +79,7 @@ In a changing world many environmental transformations will be inevitable or ver
 
 **(2) Characterize the study region**
 - Vegetation community
+  ![RCMAP Study Area!](assets/vegCover_studyArea.jpg "RCMAP_Cover")
 - Climate
 - Managament
 - Stakeholders  

@@ -13,12 +13,12 @@ start simulation Main
   year.init = startYear
   year.step = prior.year + 1
 
-  # Export configuration disabled for local testing
-  # exportFiles.patch = "memory://editor/patches"
+  # Export configuration - save to memory for browser-based educational use
+  exportFiles.patch = "file://result.csv"
 
   # Fire probability parameters (Central Utah specific)
   fire.base.probability = 1.8%
-  fire.temperature.threshold = 22 degrees
+  fire.temperature.threshold = 32 degrees
   fire.temperature.modifier = 0.15%
   fire.precipitation.threshold = 100 mm
   fire.precipitation.modifier = 0.8%
@@ -29,14 +29,18 @@ start simulation Main
   fire.native.multiplier = 1.0 count
   fire.shrub.multiplier = 2.0 count
 
-  # Fire damage parameters
-  fire.damage.invasive = 95%
-  fire.damage.native = 90%
-  fire.damage.shrub = 85%
+  # Fire damage parameters - ensures vegetation is cleared when on fire
+  fire.damage.invasive = 100%
+  fire.damage.native = 98%
+  fire.damage.shrub = 95%
 
   # Management effectiveness parameters
-  mechanical.invasive.reduction = 50%
-  reseeding.success.rate = 25%
+  # Mechanical thinning affects both native and invasive (realistic for mowing/cutting)
+  mechanical.invasive.reduction = 65%    # High effectiveness on invasive
+  mechanical.native.reduction = 10%      # Affects native (collateral damage from mowing)
+  mechanical.shrub.reduction = 5%        # Minor impact on shrubs (they can resprout)
+  
+  reseeding.success.rate = 50%
   drought.resistant.fire.reduction = 30%
   drought.resistant.establishment.multiplier = 2.5 count
   herbicide.reduction = 40%
@@ -85,16 +89,22 @@ start patch Default
   onFire.step = (sample uniform from 0% to 100%) < fireProbability
 
   # Calculate species growth rates based on summer precipitation
-  invasiveGrowth.step = map external precipitation from [50 mm, 150 mm] to [5%, 25%] sigmoid
-  nativeGrowth.step = map external precipitation from [60 mm, 120 mm] to [3%, 15%] sigmoid
+  # Aggressive invasive species: High growth rates and drought tolerance
+  invasiveGrowth.step = map external precipitation from [40 mm, 140 mm] to [12%, 35%] sigmoid
+  nativeGrowth.step = {
+    const regularGrowth = map external precipitation from [60 mm, 120 mm] to [3%, 15%] sigmoid
+    const reseedBonus = (sample uniform from 0% to 2%) if prior.reseedingTreatment else 0%
+    return regularGrowth + reseedBonus
+  }
   shrubGrowth.step = map external precipitation from [70 mm, 110 mm] to [1%, 8%] sigmoid
 
   # Calculate spread rates (colonization of empty space)
   emptySpace.step = limit (100% - prior.invasiveCover - prior.nativeCover - prior.shrubCover) to [0%, 100%]
 
+  # Aggressive invasive species: High spread rates and establishment success
   invasiveSpread.step = {
-    const maxSpread = emptySpace * 32% / 100%
-    const precipModifier = map external precipitation from [40 mm, 120 mm] to [0.3, 1.0] linear
+    const maxSpread = emptySpace * 45% / 100%  # High spread rate
+    const precipModifier = map external precipitation from [30 mm, 100 mm] to [0.5, 1.2] linear  # Drought tolerance
     return maxSpread * precipModifier
   }
 
@@ -129,44 +139,65 @@ start patch Default
     }
   }
 
-  # Calculate fire damage
-  invasiveDestruction.step = sample normal with mean of meta.fire.damage.invasive std of 10%
-  nativeDestruction.step = sample normal with mean of meta.fire.damage.native std of 15%
-  shrubDestruction.step = sample normal with mean of meta.fire.damage.shrub std of 20%
+  # Calculate fire damage - ensuring complete vegetation clearing
+  invasiveDestruction.step = sample normal with mean of meta.fire.damage.invasive std of 5%
+  nativeDestruction.step = sample normal with mean of meta.fire.damage.native std of 8%
+  shrubDestruction.step = sample normal with mean of meta.fire.damage.shrub std of 12%
 
-  # Apply management effects on invasive grass
-  mechanicalReduction.step = meta.mechanical.invasive.reduction if mechanicalTreatment else 0%
+  # Apply management effects - mechanical treatment affects all species
+  mechanicalInvasiveReduction.step = meta.mechanical.invasive.reduction if mechanicalTreatment else 0%
+  mechanicalNativeReduction.step = meta.mechanical.native.reduction if mechanicalTreatment else 0%
+  mechanicalShrubReduction.step = meta.mechanical.shrub.reduction if mechanicalTreatment else 0%
+  
   herbicideReduction.step = meta.herbicide.reduction if herbicideYearsRemaining > 0 count else 0%
 
-  totalInvasiveReduction.step = limit (mechanicalReduction + herbicideReduction) to [0%, 95%]
+  # Total reductions for each species
+  totalInvasiveReduction.step = limit (mechanicalInvasiveReduction + herbicideReduction) to [0%, 98%]
+  totalNativeReduction.step = mechanicalNativeReduction  # Only mechanical affects native
+  totalShrubReduction.step = mechanicalShrubReduction    # Only mechanical affects shrub
 
-  # Update species coverage
+  # Update species coverage - fire damage applied first to ensure clearing
   invasiveCover.step = {
+    # Apply fire damage first (ensures fire clears vegetation)
     const afterFire = prior.invasiveCover * (1 - invasiveDestruction / 100%) if onFire else prior.invasiveCover
+    # Then apply growth and spread to surviving vegetation
     const afterGrowth = afterFire + (afterFire * invasiveGrowth / 100%) + invasiveSpread
+    # Finally apply management reductions
     const afterManagement = afterGrowth * (1 - totalInvasiveReduction / 100%)
     return limit afterManagement to [0%, 100%]
   }
 
   nativeCover.step = {
+    # Apply fire damage first (ensures fire clears vegetation)
     const afterFire = prior.nativeCover * (1 - nativeDestruction / 100%) if onFire else prior.nativeCover
+    # Then apply growth and spread to surviving vegetation
     const afterGrowth = afterFire + (afterFire * nativeGrowth / 100%) + nativeSpread
-    return limit afterGrowth to [0%, 100%]
+    # Finally apply management reductions (mechanical treatment affects native too)
+    const afterManagement = afterGrowth * (1 - totalNativeReduction / 100%)
+    return limit afterManagement to [0%, 100%]
   }
 
   shrubCover.step = {
+    # Apply fire damage first (ensures fire clears vegetation)
     const afterFire = prior.shrubCover * (1 - shrubDestruction / 100%) if onFire else prior.shrubCover
+    # Then apply growth and spread to surviving vegetation
     const afterGrowth = afterFire + (afterFire * shrubGrowth / 100%) + shrubSpread
-    return limit afterGrowth to [0%, 100%]
+    # Finally apply management reductions (mechanical treatment affects shrubs slightly)
+    const afterManagement = afterGrowth * (1 - totalShrubReduction / 100%)
+    return limit afterManagement to [0%, 100%]
   }
 
-  # Calculate total coverage and adjust for overlap
+  # Calculate total coverage and adjust for overlap (competition for space)
   totalCover.step = invasiveCover + nativeCover + shrubCover
 
   # Normalize if total exceeds 100% (competition for space)
+  # Invasive species have competitive advantage in space competition
   invasiveCover.end = {
     if (prior.totalCover > 100%) {
-      return prior.invasiveCover * 100% / prior.totalCover
+      const invasiveAdvantage = 1.1  # 10% competitive advantage
+      const adjustedInvasive = prior.invasiveCover * invasiveAdvantage
+      const adjustedTotal = adjustedInvasive + prior.nativeCover + prior.shrubCover
+      return limit (adjustedInvasive * 100% / adjustedTotal) to [0%, 100%]
     } else {
       return prior.invasiveCover
     }
@@ -174,7 +205,10 @@ start patch Default
 
   nativeCover.end = {
     if (prior.totalCover > 100%) {
-      return prior.nativeCover * 100% / prior.totalCover
+      const invasiveAdvantage = 1.1
+      const adjustedInvasive = prior.invasiveCover * invasiveAdvantage
+      const adjustedTotal = adjustedInvasive + prior.nativeCover + prior.shrubCover
+      return limit (prior.nativeCover * 100% / adjustedTotal) to [0%, 100%]
     } else {
       return prior.nativeCover
     }
@@ -182,7 +216,10 @@ start patch Default
 
   shrubCover.end = {
     if (prior.totalCover > 100%) {
-      return prior.shrubCover * 100% / prior.totalCover
+      const invasiveAdvantage = 1.1
+      const adjustedInvasive = prior.invasiveCover * invasiveAdvantage
+      const adjustedTotal = adjustedInvasive + prior.nativeCover + prior.shrubCover
+      return limit (prior.shrubCover * 100% / adjustedTotal) to [0%, 100%]
     } else {
       return prior.shrubCover
     }
@@ -208,5 +245,7 @@ start patch Default
   export.nativeScore.end = nativeScore
   export.precipitation.end = external precipitation
   export.temperature.end = external temperature
+  export.mechanicalTreatment.end = mechanicalTreatment
+  export.herbicideYearsRemaining.end = herbicideYearsRemaining
 
 end patch

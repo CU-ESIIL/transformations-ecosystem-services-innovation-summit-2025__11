@@ -67,7 +67,7 @@ In a changing world many environmental transformations will be inevitable or ver
 - Bureau of Land Management (BLM)
 
 **Source: Management Treatments**
-- TWIG data
+- TWIG data and BLM vegetation treatment data
   - Mechanical removal of grasses and sagebrush
   - Seeding in native species
   - Herbicide 
@@ -103,7 +103,7 @@ In a changing world many environmental transformations will be inevitable or ver
 Background figures
 - Stakeholders (nate)
 - Sage cover (Nayani + Julie)
-- Treatments (Nayani)
+- ![Treatment effects on Sagebrush cover](docs/assets/seeding_mastication.png)
 - Climate (nate)
 Modeling figures
 - 100% for each management strategy (Sam)

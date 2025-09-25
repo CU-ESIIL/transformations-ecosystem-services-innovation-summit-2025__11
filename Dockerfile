@@ -16,9 +16,6 @@ COPY code/ /code/
 # Copy the fat JAR into the same directory
 COPY joshsim-fat.jar /code/joshsim-fat.jar
 
-# Set environment variables for common configuration
-ENV JAVA_OPTS="-Xmx4g -Xms2g"
-
 # Default command runs a simulation with configurable parameters
 # Can be overridden with docker run command
 ENTRYPOINT ["java", "-jar", "joshsim-fat.jar"]
